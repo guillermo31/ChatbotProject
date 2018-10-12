@@ -1,30 +1,45 @@
 package chat.controller;
-
+import chat.model.ChatBot;
 import javax.swing.JOptionPane;
 
 public class ChatController
 {
+	private ChatBot firstChatBot;
+	
 	public ChatController()
 	{
-		
+		firstChatBot = new ChatBot();
 	}
 	
 	public void start()
 	{	
+		//method calls
+		interactWithChatBot();
+		JOptionPane.showMessageDialog(null, firstChatBot);
 		
-		String userInput = " ";
-		while(!userInput.equalsIgnoreCase("quit")) 
+		//exit loop
+		String keepChatting = JOptionPane.showInputDialog(null, "Do you want to keep chatting?");
+		if (keepChatting.equals("yes")) 
 		{
-			userInput = JOptionPane.showInputDialog(null, "type 'quit' to exit ");
+			interactWithChatBot();
+		}else if (keepChatting.equals("no"))
+		{
+			String userInput = " ";
+			while(!userInput.equalsIgnoreCase("quit")) 
+			{
+				userInput = JOptionPane.showInputDialog(null, "type 'quit' to exit ");
+			}
+			
 		}
 		
-		
-		interactWithChatBot();
 	}
 	
-	public String interactWithChatBot()
-	{
-		return " ";
+	public void interactWithChatBot()
+	{	
+		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
+		firstChatBot.setCurrentUser(currentUser);
+
+	
 	}
 	
 	

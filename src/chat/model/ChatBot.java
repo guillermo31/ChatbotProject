@@ -68,6 +68,13 @@ public class ChatBot
 		
 	}
 	
+	public String toString()
+	{
+		String description = "Your name is " + currentUser;
+		
+		return description;
+	}
+	
 	
 	
 	
