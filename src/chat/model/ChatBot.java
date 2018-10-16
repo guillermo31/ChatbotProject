@@ -44,6 +44,10 @@ public class ChatBot
 	{
 		return responseList;
 	}
+	public ArrayList<String> getSpookyList()
+	{
+		return spookyListss;
+	}
 	
 	//setters
 	public void setCurrentUser(String user)
@@ -62,6 +66,10 @@ public class ChatBot
 	{
 		this.responseList = responses;
 	}
+	public void setSpookyList(ArrayList<String> spooky)
+	{
+		this.spookyList = spooky;
+	}
 	
 	//methods
 	public String askName()
@@ -73,6 +81,13 @@ public class ChatBot
 	{
 		responseList.add("hello! what's up?");
 		responseList.add("See ya");
+		responseList.add("NO WAY tell me more...");
+		responseList.add("are you for real???");
+		
+		spookyList.add("i hate christmas, halloween is way spookier");
+		spookyList.add("i am not scary");
+		spookyList.add("please remember to make your costume appropiately spooky");
+		
 	}
 	
 	
