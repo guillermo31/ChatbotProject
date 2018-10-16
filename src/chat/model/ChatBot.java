@@ -9,6 +9,9 @@ public class ChatBot
 	private String joke;
 	private String content;
 	
+	private ArrayList<String> responseList;
+	private ArrayList<String> spookyList;
+	
 	//constructors
 	public ChatBot()
 	{
@@ -20,6 +23,8 @@ public class ChatBot
 		this.currentUser = currentUser;
 		this.joke = joke;
 		this.content = content;
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
 	}
 	
 	//getters
@@ -35,6 +40,10 @@ public class ChatBot
 	{
 		return content;
 	}
+	public ArrayList<String> getResponseList()
+	{
+		return responseList;
+	}
 	
 	//setters
 	public void setCurrentUser(String user)
@@ -49,6 +58,10 @@ public class ChatBot
 	{
 		this.content = content;
 	}
+	public void setResponseList(ArrayList<String> responses)
+	{
+		this.responseList = responses;
+	}
 	
 	//methods
 	public String askName()
@@ -56,17 +69,12 @@ public class ChatBot
 		return " ";
 	}
 	
-	public void responses()
+	private void buildLists()
 	{
-		ArrayList<String> responseList = new ArrayList<String>();
-		
+		responseList.add("hello! what's up?");
+		responseList.add("See ya");
 	}
 	
-	public void spooky()
-	{
-		ArrayList<String> spookyList = new ArrayList<String>();
-		
-	}
 	
 	public String toString()
 	{

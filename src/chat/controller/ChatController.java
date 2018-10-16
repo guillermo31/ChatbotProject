@@ -3,12 +3,16 @@ import chat.model.ChatBot;
 import javax.swing.JOptionPane;
 
 public class ChatController
-{
+{ 
 	private ChatBot firstChatBot;
+	
+	private String userJoke;
+	private String userContent;
+	private String userCurrent;
 	
 	public ChatController()
 	{
-		firstChatBot = new ChatBot();
+		firstChatBot = new ChatBot(userCurrent, userJoke, userContent);
 	}
 	
 	public void start()
