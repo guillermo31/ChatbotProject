@@ -1,10 +1,10 @@
 package chat.controller;
-import chat.model.ChatBot;
+import chat.model.Chatbot;
 import javax.swing.JOptionPane;
 
 public class ChatController
 { 
-	private ChatBot firstChatBot;
+	private Chatbot firstChatBot;
 	
 	private String userJoke;
 	private String userContent;
@@ -12,14 +12,13 @@ public class ChatController
 	
 	public ChatController()
 	{
-		firstChatBot = new ChatBot(userCurrent, userJoke, userContent);
+		firstChatBot = new Chatbot(userCurrent, userJoke, userContent);
 	}
 	
 	public void start()
 	{	
 		//method calls
 		interactWithChatBot();
-		JOptionPane.showMessageDialog(null, firstChatBot);
 		
 		//exit loop
 		String keepChatting = JOptionPane.showInputDialog(null, "Do you want to keep chatting?");
@@ -42,6 +41,11 @@ public class ChatController
 	{	
 		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
 		firstChatBot.setCurrentUser(currentUser);
+		
+//		String userInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
+//		String chatbotSays = firstChatBot.processText(userInput);
+//		return chatbotSays;
+//		
 
 	
 	}

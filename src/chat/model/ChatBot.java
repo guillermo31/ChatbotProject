@@ -2,7 +2,7 @@ package chat.model;
 import java.util.ArrayList;
  
 
-public class ChatBot
+public class Chatbot
 {
 	//data members
 	private String currentUser;
@@ -13,18 +13,21 @@ public class ChatBot
 	private ArrayList<String> spookyList;
 	
 	//constructors
-	public ChatBot()
+	public Chatbot()
 	{
 		
 	}
 	
-	public ChatBot(String currentUser, String joke, String content) 
+	public Chatbot(String currentUser, String joke, String content) 
 	{
 		this.currentUser = currentUser;
 		this.joke = joke;
 		this.content = content;
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
+		
+		buildLists();
+		
 	}
 	
 	//getters
@@ -46,7 +49,7 @@ public class ChatBot
 	}
 	public ArrayList<String> getSpookyList()
 	{
-		return spookyListss;
+		return spookyList;
 	}
 	
 	//setters
@@ -72,10 +75,6 @@ public class ChatBot
 	}
 	
 	//methods
-	public String askName()
-	{
-		return " ";
-	}
 	
 	private void buildLists()
 	{
@@ -90,12 +89,14 @@ public class ChatBot
 		
 	}
 	
-	
-	public String toString()
+	public String processText(String userText)
 	{
-		String description = "Your name is " + currentUser;
+		String output = " ";
 		
-		return description;
+		
+		output += currentUser + " said: " + userText;
+		
+		return output;
 	}
 	
 	
