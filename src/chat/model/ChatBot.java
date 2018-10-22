@@ -9,8 +9,8 @@ public class Chatbot
 	private String joke;
 	private String content;
 	
-	private ArrayList<String> responseList;
-	private ArrayList<String> spookyList;
+	private ArrayList<String> responseList = new ArrayList<String>();
+	private ArrayList<String> spookyList = new ArrayList<String>();
 	
 	//constructors
 	public Chatbot()
@@ -18,19 +18,20 @@ public class Chatbot
 		
 	}
 	
-	public Chatbot(String currentUser, String joke, String content) 
+	public Chatbot(String currentUser, String joke, String content, ArrayList<String> responseList, ArrayList<String> spookyList) 
 	{
 		this.currentUser = currentUser;
 		this.joke = joke;
 		this.content = content;
-		this.responseList = new ArrayList<String>();
-		this.spookyList = new ArrayList<String>();
+		this.responseList = responseList;
+		this.spookyList = spookyList;
 		
 		buildLists();
 		
 	}
 	
 	//getters
+	
 	public String getCurrentUser()
 	{
 		return currentUser;
@@ -83,9 +84,18 @@ public class Chatbot
 		responseList.add("NO WAY tell me more...");
 		responseList.add("are you for real???");
 		
+		spookyList.add("Halloween");
 		spookyList.add("i hate christmas, halloween is way spookier");
 		spookyList.add("i am not scary");
 		spookyList.add("please remember to make your costume appropiately spooky");
+		spookyList.add("i am not scary");
+		spookyList.add("boo");
+		spookyList.add("you are scary");
+		spookyList.add("halloween is definintely the best holiday");
+		spookyList.add("you're never too old to be spooky");
+		spookyList.add("you're never too old to be spooky");
+		spookyList.add("are you scared?");
+
 		
 	}
 	
