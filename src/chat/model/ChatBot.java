@@ -101,24 +101,24 @@ public class Chatbot
 	
 	public boolean legitimacyChecker(String input)
 	{
-		boolean legit = false;
+		boolean isValid = true;
 		
-		if(input.equals(null))
+		if(input == null)
 		{
-			legit = false;
+			isValid = false;
 		}else if(input.equals(""))
 		{
-			legit = false;
+			isValid = false;
 		}else if(input.equals("asdfghjkl"))
 		{
-			legit = false;
+			isValid = false;
 		}else if(input.length() > 1)
 		{
-			legit = true;
+			isValid = true;
 		}
 		
 		
-		return legit;
+		return isValid;
 	}
 	
 	public String processText(String userText)

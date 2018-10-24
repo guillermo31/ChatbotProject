@@ -44,13 +44,25 @@ public class ChatController
 	
 	public void interactWithChatBot(String chatbotSays)
 	{	
+		//setting user's name
 		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
 		firstChatBot.setCurrentUser(currentUser);
 		JOptionPane.showMessageDialog(null, firstChatBot.processText(currentUser));
 		
-		String userInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
-		JOptionPane.showMessageDialog(null, firstChatBot.processText(userInput));
-		
+		//while loop for input
+		String firstInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
+		JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+		while(firstChatBot.legitimacyChecker(firstInput)) 
+		{
+			firstInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
+			JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+			if(firstInput.contains("I don't want to talk anymore") || firstInput.contains("i don't wanna talk anymore"))
+			{
+				break;
+			}
+
+		}
+			
 	}
 	
 	public String useChatbotCheckers(String spooky)
