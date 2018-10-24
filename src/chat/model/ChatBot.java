@@ -99,11 +99,26 @@ public class Chatbot
 		
 	}
 	
-	public boolean legitimacyChecker()
+	public boolean legitimacyChecker(String input)
 	{
-		boolean bool = true;
+		boolean legit = false;
 		
-		return bool;
+		if(input.equals(null))
+		{
+			legit = false;
+		}else if(input.equals(""))
+		{
+			legit = false;
+		}else if(input.equals("asdfghjkl"))
+		{
+			legit = false;
+		}else if(input.length() > 1)
+		{
+			legit = true;
+		}
+		
+		
+		return legit;
 	}
 	
 	public String processText(String userText)

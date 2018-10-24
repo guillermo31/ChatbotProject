@@ -24,6 +24,7 @@ public class ChatController
 		//method calls
 		interactWithChatBot("");
 		
+		
 		//exit loop
 		String keepChatting = JOptionPane.showInputDialog(null, "Do you want to keep chatting?");
 		if (keepChatting.equals("yes")) 
@@ -45,9 +46,10 @@ public class ChatController
 	{	
 		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
 		firstChatBot.setCurrentUser(currentUser);
+		JOptionPane.showMessageDialog(null, firstChatBot.processText(currentUser));
 		
 		String userInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
-		chatbotSays = firstChatBot.processText(userInput);
+		JOptionPane.showMessageDialog(null, firstChatBot.processText(userInput));
 		
 	}
 	
