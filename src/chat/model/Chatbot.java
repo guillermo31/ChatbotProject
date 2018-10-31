@@ -156,6 +156,13 @@ public class Chatbot
 		return isSpooky;
 	}
 	
+	public boolean contentChecker()
+	{
+		boolean hasContent = false;
+		
+		return hasContent; 
+	}
+	
 	public String processText(String userText)
 	{
 		String output;
