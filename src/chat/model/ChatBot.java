@@ -82,7 +82,7 @@ public class Chatbot
 	
 	private void buildLists()
 	{
-		responseList.add("hello! what's up?");
+		responseList.add("Hello what's up?");
 		responseList.add("See ya");
 		responseList.add("NO WAY tell me more...");
 		responseList.add("are you for real???");
@@ -137,23 +137,20 @@ public class Chatbot
 		return isValid;
 	}
 	
-	public boolean spookyChecker(String input)
+	public boolean spookyChecker(String content)
 	{
 		boolean isSpooky = false;
 		
-		if(input.contains("Halloween"))
+		if(content.contains("Halloween"))
 		{
 			isSpooky = true;
 		}
 		
 		for(String spookyPhrase : spookyList)
 		{
-			if(spookyPhrase.contains(input))
+			if(spookyPhrase.contains(content))
 			{
 				isSpooky = true;
-			}else
-			{
-				isSpooky = false;
 			}
 		}
 		return isSpooky;
@@ -165,6 +162,7 @@ public class Chatbot
 		
 		
 		output =  "You said: " + userText;
+		output += " Chatbot says: ";
 		
 		return output;
 	}

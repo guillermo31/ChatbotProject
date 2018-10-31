@@ -16,7 +16,7 @@ public class ChatController
 	
 	public ChatController()
 	{
-		firstChatBot = new Chatbot(userCurrent, userJoke, userContent, firstList, firstSpooky);
+		firstChatBot = new Chatbot();
 	}
 	
 	public void start()
@@ -56,7 +56,7 @@ public class ChatController
 		{
 			firstInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
 			JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
-			if(firstInput.contains("I don't want to talk anymore") || firstInput.contains("i don't wanna talk anymore"))
+			if(firstInput.contains("talk anymore"))
 			{
 				break;
 			}
