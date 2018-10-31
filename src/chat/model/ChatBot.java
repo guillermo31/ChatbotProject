@@ -13,21 +13,24 @@ public class Chatbot
 	private ArrayList<String> spookyList = new ArrayList<String>();
 	
 	//constructors
-	public Chatbot()
-	{
-		
-	}
 	
-	public Chatbot(String currentUser, String joke, String content, ArrayList<String> responseList, ArrayList<String> spookyList) 
+	
+	public Chatbot() 
 	{
-		this.currentUser = currentUser;
-		this.joke = joke;
-		this.content = content;
-		this.responseList = responseList;
-		this.spookyList = spookyList;
+		this.currentUser = "guillermo";
+		this.joke = "you";
+		this.content = "hi there ";
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		
 		
 		buildLists();
 		
+	}
+	
+	public Chatbot(String content)
+	{
+		this.content = content;
 	}
 	
 	//getters
@@ -87,6 +90,15 @@ public class Chatbot
 		responseList.add("you should not say that");
 		responseList.add("you're weird");
 		responseList.add("ummm ok");
+		responseList.add("are you for sure?");
+		responseList.add("I don't like that.");
+		responseList.add("how was your day?");
+		responseList.add("You're funny");
+		responseList.add("hahaha");
+		responseList.add("lol");
+		responseList.add("do you do any sports?");
+		responseList.add("tell me a joke");
+		responseList.add("that was definitely NOT funny");
 		
 		spookyList.add("Halloween");
 		spookyList.add("i hate christmas, halloween is way spookier");
@@ -149,10 +161,10 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String output = " ";
+		String output;
 		
 		
-		output += currentUser + " said: " + userText;
+		output =  "You said: " + userText;
 		
 		return output;
 	}
