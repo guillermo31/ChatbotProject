@@ -83,6 +83,10 @@ public class Chatbot
 		responseList.add("See ya");
 		responseList.add("NO WAY tell me more...");
 		responseList.add("are you for real???");
+		responseList.add("you're cool");
+		responseList.add("you should not say that");
+		responseList.add("you're weird");
+		responseList.add("ummm ok");
 		
 		spookyList.add("Halloween");
 		spookyList.add("i hate christmas, halloween is way spookier");
@@ -119,6 +123,28 @@ public class Chatbot
 		
 		
 		return isValid;
+	}
+	
+	public boolean spookyChecker(String input)
+	{
+		boolean isSpooky = false;
+		
+		if(input.contains("Halloween"))
+		{
+			isSpooky = true;
+		}
+		
+		for(String spookyPhrase : spookyList)
+		{
+			if(spookyPhrase.contains(input))
+			{
+				isSpooky = true;
+			}else
+			{
+				isSpooky = false;
+			}
+		}
+		return isSpooky;
 	}
 	
 	public String processText(String userText)

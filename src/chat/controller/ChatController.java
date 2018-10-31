@@ -22,14 +22,14 @@ public class ChatController
 	public void start()
 	{	
 		//method calls
-		interactWithChatBot("");
+		interactWithChatbot("");
 		
 		
 		//exit loop
 		String keepChatting = JOptionPane.showInputDialog(null, "Do you want to keep chatting?");
 		if (keepChatting.equals("yes")) 
 		{
-			interactWithChatBot("");
+			interactWithChatbot("");
 		}else if (keepChatting.equals("no"))
 		{
 			String userInput = " ";
@@ -42,7 +42,7 @@ public class ChatController
 		
 	}
 	
-	public void interactWithChatBot(String chatbotSays)
+	public void interactWithChatbot(String chatbotSays)
 	{	
 		//setting user's name
 		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
@@ -67,6 +67,7 @@ public class ChatController
 	
 	public String useChatbotCheckers(String spooky)
 	{	
+		
 		return spooky;
 		
 	}
