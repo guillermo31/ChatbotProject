@@ -115,6 +115,7 @@ public class Chatbot
 		
 	}
 	
+	
 	public boolean legitimacyChecker(String input)
 	{
 		boolean isValid = true;
@@ -156,9 +157,16 @@ public class Chatbot
 		return isSpooky;
 	}
 	
-	public boolean contentChecker()
+	public boolean contentChecker(String content)
 	{
 		boolean hasContent = false;
+		
+		
+		if(content == this.content )
+		{
+			hasContent = true;
+		}
+		
 		
 		return hasContent; 
 	}
