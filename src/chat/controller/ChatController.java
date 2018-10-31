@@ -7,12 +7,6 @@ public class ChatController
 { 
 	private Chatbot firstChatBot;
 	
-	private String userJoke;
-	private String userContent;
-	private String userCurrent;
-	private ArrayList<String> firstList = new ArrayList<String>();
-	private ArrayList<String> firstSpooky = new ArrayList<String>();
-
 	
 	public ChatController()
 	{
