@@ -157,18 +157,27 @@ public class Chatbot
 		return isSpooky;
 	}
 	
-	public boolean contentChecker(String content)
+	public boolean contentChecker(String input)
 	{
-		boolean hasContent = false;
+		String specialContent = this.content;
+
+		boolean hasSpecialContent = false;
 		
-		
-		if(content == this.content )
+		if(input.equals(specialContent))
 		{
-			hasContent = true;
+			hasSpecialContent = true;
+		}
+		else if (input.contains(specialContent + " ") )
+		{
+			hasSpecialContent = true;
+		}
+		else if (input.contains(" " + specialContent))
+		{
+			hasSpecialContent = true;
 		}
 		
 		
-		return hasContent; 
+		return hasSpecialContent; 
 	}
 	
 	public String processText(String userText)
@@ -178,6 +187,8 @@ public class Chatbot
 		
 		output =  "You said: " + userText;
 		output += " Chatbot says: ";
+		
+		contentChecker(userText);
 		
 		return output;
 	}

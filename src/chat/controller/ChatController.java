@@ -10,7 +10,7 @@ public class ChatController
 	
 	public ChatController()
 	{
-		firstChatBot = new Chatbot();
+		firstChatBot = new Chatbot("chingon");
 	}
 	
 	public void start()
