@@ -198,6 +198,9 @@ public class Chatbot
 		if(legitimacyChecker(userText)) 
 		{
 			output += " Your text is legit! ";
+		}else 
+		{
+			output = "your input was null or invalid";
 		}
 		
 		if(contentChecker(userText))
