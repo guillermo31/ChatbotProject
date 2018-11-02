@@ -180,6 +180,8 @@ public class Chatbot
 		return hasSpecialContent; 
 	}
 	
+	
+	
 	public String processText(String userText)
 	{
 		String output;
@@ -188,7 +190,20 @@ public class Chatbot
 		output =  "You said: " + userText;
 		output += " Chatbot says: ";
 		
-		contentChecker(userText);
+		if(spookyChecker(userText))
+		{
+			output += " You are spooky! ";
+		}
+		
+		if(legitimacyChecker(userText)) 
+		{
+			output += " Your text is legit! ";
+		}
+		
+		if(contentChecker(userText))
+		{
+			output += " You said the special WORD!!!! ";
+		}
 		
 		return output;
 	}
