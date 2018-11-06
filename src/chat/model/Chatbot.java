@@ -149,7 +149,7 @@ public class Chatbot
 		
 		for(String spookyPhrase : spookyList)
 		{
-			if(spookyPhrase.contains(content))
+			if(content.contains(spookyPhrase))
 			{
 				isSpooky = true;
 			}
