@@ -142,18 +142,35 @@ public class Chatbot
 	{
 		boolean isSpooky = false;
 		
-		if(content.contains("Halloween"))
+		if(content == null)
+		{
+			isSpooky = false;
+			
+		}
+		else if(content.contains("Halloween"))
+		{
+			isSpooky = true;
+		}
+		else if(content.contains("halloween"))
 		{
 			isSpooky = true;
 		}
 		
 		for(String spookyPhrase : spookyList)
 		{
-			if(content.contains(spookyPhrase))
+			if(content == null)
+			{
+				isSpooky = false;
+			}
+			else if(content.contains(spookyPhrase))
 			{
 				isSpooky = true;
 			}
+			
+			
+			
 		}
+		
 		return isSpooky;
 	}
 	
@@ -163,7 +180,11 @@ public class Chatbot
 
 		boolean hasSpecialContent = false;
 		
-		if(input.equals(specialContent))
+		if (input == null) 
+		{
+			hasSpecialContent = false;
+		}
+		else if(input.equals(specialContent))
 		{
 			hasSpecialContent = true;
 		}
@@ -193,6 +214,9 @@ public class Chatbot
 		if(spookyChecker(userText))
 		{
 			output += " You are spooky! ";
+		}else if (userText == null)
+		{
+			output += "your input was null";
 		}
 		
 		if(legitimacyChecker(userText)) 
@@ -205,7 +229,10 @@ public class Chatbot
 		
 		if(contentChecker(userText))
 		{
-			output += " You said the special WORD!!!! ";
+			output += " You said the special words ";
+		}else if (userText == null)
+		{
+			output += "your input was null";
 		}
 		
 		return output;

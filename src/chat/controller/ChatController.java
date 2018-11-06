@@ -1,6 +1,7 @@
 package chat.controller;
 import chat.model.Chatbot;
 import javax.swing.JOptionPane;
+import java.util.*; 
 import java.util.ArrayList;
 
 public class ChatController
@@ -20,6 +21,12 @@ public class ChatController
 		
 		
 		//exit loop
+		
+		
+	}
+	
+	public void exitLoop()
+	{
 		String keepChatting = JOptionPane.showInputDialog(null, "Do you want to keep chatting?");
 		if (keepChatting.equals("yes")) 
 		{
@@ -30,34 +37,51 @@ public class ChatController
 			while(!userInput.equalsIgnoreCase("quit")) 
 			{
 				userInput = JOptionPane.showInputDialog(null, "type 'quit' to exit ");
+				if (userInput.equals("quit"))
+				{
+	                System.exit(0); 
+				}
 			}
 			
 		}
-		
 	}
 	
-	public void interactWithChatbot(String chatbotSays)
+	public String interactWithChatbot(String chatbotSays)
 	{	
+		
+		
 		//setting user's name
-		String currentUser = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
-		firstChatBot.setCurrentUser(currentUser);
-		JOptionPane.showMessageDialog(null, firstChatBot.processText(currentUser));
+		chatbotSays = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
+		firstChatBot.setCurrentUser(chatbotSays);
+		JOptionPane.showMessageDialog(null, firstChatBot.processText(chatbotSays));
 		
 		//while loop for input
-		String firstInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
+		String firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
 		JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
 		while(firstChatBot.legitimacyChecker(firstInput)) 
 		{
-			firstInput = JOptionPane.showInputDialog(null, currentUser + ", what do you want to talk about?");
+			firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
 			JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+			if(chatbotSays == null)
+			{
+				chatbotSays = JOptionPane.showInputDialog(null, "There is null");
+			}
+			
+			if(chatbotSays.equals(""))
+			{
+				chatbotSays = JOptionPane.showInputDialog(null, "This is just blank bro");
+			}
+			
 			if(firstInput.contains("talk anymore"))
 			{
-				break;
+				exitLoop();
 			}
-
-		}
 			
+		}
+		
+		return chatbotSays;
 	}
+	
 	
 	public String useChatbotCheckers(String spooky)
 	{	
