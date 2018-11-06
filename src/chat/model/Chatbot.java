@@ -209,11 +209,11 @@ public class Chatbot
 		String output;
 
 		output = "You said: " + userText;
-		output += " Chatbot says: ";
+		output += "\n Chatbot says: ";
 
 		if (spookyChecker(userText))
 		{
-			output += " You are spooky! ";
+			output += "\n You are spooky! ";
 		}
 		else if (userText == null)
 		{
@@ -222,16 +222,16 @@ public class Chatbot
 
 		if (legitimacyChecker(userText))
 		{
-			output += " Your text is legit! ";
+			output += "\n Your text is legit! ";
 		}
 		else
 		{
-			output = "your input was null or invalid";
+			output += "your input was null or invalid";
 		}
 
 		if (contentChecker(userText))
 		{
-			output += " You said the special words ";
+			output += "\n You said the special words ";
 		}
 		else if (userText == null)
 		{
