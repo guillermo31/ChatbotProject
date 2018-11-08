@@ -207,9 +207,9 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String output;
-
+		int randomIndex = (int)(Math.random()*responseList.size());
 		output = "You said: " + userText;
-		output += "\n Chatbot says: ";
+		output += "\n Chatbot says: " + responseList.get(randomIndex);
 
 		if (spookyChecker(userText))
 		{
