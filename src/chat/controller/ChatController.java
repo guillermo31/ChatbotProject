@@ -4,15 +4,19 @@ import chat.model.Chatbot;
 import javax.swing.JOptionPane;
 import java.util.*;
 import java.util.ArrayList;
+import chat.view.*;
 
 public class ChatController
 {
 	private Chatbot firstChatBot;
+	private ChatFrame appFrame;
 
 	public ChatController()
 	{
 		firstChatBot = new Chatbot("chingon");
+		this.appFrame = new ChatFrame(this);
 	}
+	
 
 	public void start()
 	{
