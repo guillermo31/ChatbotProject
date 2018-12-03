@@ -200,6 +200,10 @@ public class Chatbot
 		{
 			hasSpecialContent = true;
 		}
+		else if (input.contains(" " + specialContent + " "))
+		{
+			hasSpecialContent = true;
+		}
 
 		return hasSpecialContent;
 	}
@@ -207,13 +211,14 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String output;
-		int randomIndex = (int)(Math.random()*responseList.size());
+		//int randomIndex = (int)(Math.random()*responseList.size());
 		output = "You said: " + userText;
-		output += "\n Chatbot says: " + responseList.get(randomIndex);
+		//+ responseList.get(randomIndex)
+		output += " Chatbot says: ";
 
 		if (spookyChecker(userText))
 		{
-			output += "\n You are spooky! ";
+			output += " You are spooky! ";
 		}
 		else if (userText == null)
 		{
@@ -222,7 +227,7 @@ public class Chatbot
 
 		if (legitimacyChecker(userText))
 		{
-			output += "\n Your text is legit! ";
+			output += "Your text is legit! ";
 		}
 		else
 		{
@@ -231,7 +236,7 @@ public class Chatbot
 
 		if (contentChecker(userText))
 		{
-			output += "\n You said the special words ";
+			output += "You said the special words ";
 		}
 		else if (userText == null)
 		{
