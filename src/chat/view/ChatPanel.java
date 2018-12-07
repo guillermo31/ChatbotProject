@@ -1,11 +1,7 @@
 package chat.view;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
 
-
-import javax.swing.SpringLayout;
 import javax.swing.*;
 
 import chat.controller.ChatController;
@@ -13,10 +9,9 @@ import chat.controller.ChatController;
 public class ChatPanel 
 {
 
-private ChatController appController;
+	private ChatController appController;
 	
-	private JButton colorButton;
-	private JLabel textLabel;
+	
 	private SpringLayout appLayout;
 	
 	public ChatPanel(ChatController appController)
@@ -35,8 +30,6 @@ private ChatController appController;
 	{
 		this.setLayout(appLayout);
 		
-		
-		
 	}
 	
 	private void setupLayout()
@@ -46,12 +39,6 @@ private ChatController appController;
 	
 	private void setupListeners()
 	{
-		colorButton.addActionListener(new ActionListener()
-				{
-					public void actionPerformed(ActionEvent mouseClick)
-					{
-						changeBackgroundColor();
-					}
-				});
+		
 	}
 }
