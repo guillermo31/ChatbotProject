@@ -10,6 +10,7 @@ public class ChatController
 {
 	private Chatbot firstChatBot;
 	private ChatFrame appFrame;
+	private ChatPanel appPanel;
 
 	public ChatController()
 	{
