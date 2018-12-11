@@ -87,6 +87,7 @@ public class ChatController
 
 		String firstInput = chatbotSays + ", what do you want to talk about?";
 		firstChatBot.processText(firstInput);
+		
 		while (firstChatBot.legitimacyChecker(firstInput))
 		{
 			firstInput = chatbotSays + ", what do you want to talk about?";
