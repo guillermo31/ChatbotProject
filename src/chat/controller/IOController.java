@@ -9,13 +9,18 @@ public class IOController
 	{
 		try 
 		{
+			//Created a variable that gets the path of the file 
 			String fileName = path;
 			Calendar date = Calendar.getInstance();
+			//Added the date to the file's path
 			fileName += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
 			fileName += " chabot save.txt";
 			
+			//Created an instance of File
 			File saveFile = new File(fileName);
+			//Initialized scanner 
 			Scanner textScanner = new Scanner(textToSave);
+			//Created instance of PrintWriter
 			PrintWriter saveText = new PrintWriter(saveFile);
 			while(textScanner.hasNext())
 			{

@@ -84,7 +84,11 @@ public class ChatController
 
 		return chatbotSays;
 	}
-
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	
 	public String useChatbotCheckers(String spooky)
 	{
 
@@ -96,5 +100,7 @@ public class ChatController
 	{
 		return firstChatBot;
 	}
+	
+	
 
 }
