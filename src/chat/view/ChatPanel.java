@@ -5,6 +5,7 @@ import java.awt.*;
 
 import javax.swing.*;
 import chat.controller.ChatController;
+import chat.controller.IOController;
 
 public class ChatPanel extends JPanel
 {
@@ -94,7 +95,10 @@ public class ChatPanel extends JPanel
 				{
 					public void actionPerformed(ActionEvent click)
 					{
-						
+						String chatText = chatArea.getText();
+						String path = "~/Documents";
+						IOController.saveText(appController, path, chatText);
+						chatArea.setText("Chat saved!");
 					}
 						
 				});
