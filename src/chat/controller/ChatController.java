@@ -54,9 +54,9 @@ public class ChatController
 	{
 
 		// setting user's name
-		chatbotSays = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
-		firstChatBot.setCurrentUser(chatbotSays);
-		JOptionPane.showMessageDialog(null, firstChatBot.processText(chatbotSays));
+//		chatbotSays = JOptionPane.showInputDialog(null, "Hi! First things first, what is your name?");
+//		firstChatBot.setCurrentUser(chatbotSays);
+//		JOptionPane.showMessageDialog(null, firstChatBot.processText(chatbotSays));
 
 		// while loop for input
 //		String firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
@@ -81,6 +81,10 @@ public class ChatController
 //			}
 //
 //		}
+		chatbotSays = "Hi! First things first, what is your name?";
+		firstChatBot.setCurrentUser(chatbotSays);
+		firstChatBot.processText(chatbotSays);
+
 		String firstInput = chatbotSays + ", what do you want to talk about?";
 		firstChatBot.processText(firstInput);
 		while (firstChatBot.legitimacyChecker(firstInput))
