@@ -85,16 +85,16 @@ public class ChatController
 		firstChatBot.processText(firstInput);
 		while (firstChatBot.legitimacyChecker(firstInput))
 		{
-			firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
-			JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+			firstInput = chatbotSays + ", what do you want to talk about?";
+			firstChatBot.processText(firstInput);
 			if (chatbotSays == null)
 			{
-				chatbotSays = JOptionPane.showInputDialog(null, "There is null");
+				chatbotSays = "There is null";
 			}
 
 			if (chatbotSays.equals(""))
 			{
-				chatbotSays = JOptionPane.showInputDialog(null, "This is just blank bro");
+				chatbotSays = "This is just blank bro";
 			}
 
 			if (firstInput.contains("talk anymore"))
