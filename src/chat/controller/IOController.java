@@ -10,8 +10,21 @@ public class IOController
 		try 
 		{
 			String fileName = path;
-			fileName += Calendar.MONTH + " " + Calendar.DAY_OF_MONTH;
-			fileName += " chat save.txt";
+			Calendar date = Calendar.getInstance();
+			fileName += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
+			fileName += " chabot save.txt";
+			
+			File saveFile = new File(fileName);
+			Scanner textScanner = new Scanner(textToSave);
+			PrintWriter saveText = new PrintWriter(saveFile);
+			while(textScanner.hasNext())
+			{
+				String currentLine = textScanner.nextLine();
+				saveText.println(currentLine);
+			}
+			
+			textScanner.close();
+			saveText.close();
 		}
 		catch(IOException error)
 		{
