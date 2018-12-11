@@ -59,8 +59,30 @@ public class ChatController
 		JOptionPane.showMessageDialog(null, firstChatBot.processText(chatbotSays));
 
 		// while loop for input
-		String firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
-		JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+//		String firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
+//		JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+//		while (firstChatBot.legitimacyChecker(firstInput))
+//		{
+//			firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
+//			JOptionPane.showMessageDialog(null, firstChatBot.processText(firstInput));
+//			if (chatbotSays == null)
+//			{
+//				chatbotSays = JOptionPane.showInputDialog(null, "There is null");
+//			}
+//
+//			if (chatbotSays.equals(""))
+//			{
+//				chatbotSays = JOptionPane.showInputDialog(null, "This is just blank bro");
+//			}
+//
+//			if (firstInput.contains("talk anymore"))
+//			{
+//				exitLoop();
+//			}
+//
+//		}
+		String firstInput = chatbotSays + ", what do you want to talk about?";
+		firstChatBot.processText(firstInput);
 		while (firstChatBot.legitimacyChecker(firstInput))
 		{
 			firstInput = JOptionPane.showInputDialog(null, chatbotSays + ", what do you want to talk about?");
@@ -81,6 +103,7 @@ public class ChatController
 			}
 
 		}
+
 
 		return chatbotSays;
 	}

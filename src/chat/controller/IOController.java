@@ -14,6 +14,7 @@ public class IOController
 			Calendar date = Calendar.getInstance();
 			//Added the date to the file's path
 			fileName += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
+			fileName += "/" + date.get(Calendar.HOUR) + " " + date.get(Calendar.MINUTE);
 			fileName += " chabot save.txt";
 			
 			//Created an instance of File

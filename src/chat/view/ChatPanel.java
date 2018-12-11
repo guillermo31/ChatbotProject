@@ -84,7 +84,7 @@ public class ChatPanel extends JPanel
 			{
 				String userText = chatField.getText();
 				String response = "";
-				response = appController.interactWithChatbot(userText);
+				response += appController.interactWithChatbot(userText);
 				chatArea.append(response);
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
 				chatField.setText("");
@@ -96,7 +96,7 @@ public class ChatPanel extends JPanel
 					public void actionPerformed(ActionEvent click)
 					{
 						String chatText = chatArea.getText();
-						String path = "~/Documents";
+						String path = ".";
 						IOController.saveText(appController, path, chatText);
 						chatArea.setText("Chat saved!");
 					}
