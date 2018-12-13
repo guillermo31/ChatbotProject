@@ -84,30 +84,30 @@ public class ChatController
 		chatbotSays = "Hi! First things first, what is your name?";
 		firstChatBot.setCurrentUser(chatbotSays);
 		firstChatBot.processText(chatbotSays);
-
-		String firstInput = chatbotSays + ", what do you want to talk about?";
-		firstChatBot.processText(firstInput);
-		
-		while (firstChatBot.legitimacyChecker(firstInput))
-		{
-			firstInput = chatbotSays + ", what do you want to talk about?";
-			firstChatBot.processText(firstInput);
-			if (chatbotSays == null)
-			{
-				chatbotSays = "There is null";
-			}
-
-			if (chatbotSays.equals(""))
-			{
-				chatbotSays = "This is just blank bro";
-			}
-
-			if (firstInput.contains("talk anymore"))
-			{
-				exitLoop();
-			}
-
-		}
+		chatbotSays = chatbotSays + ", what do you want to talk about";
+//		String firstInput = chatbotSays + ", what do you want to talk about?";
+//		firstChatBot.processText(firstInput);
+//		
+//		while (firstChatBot.legitimacyChecker(firstInput))
+//		{
+//			firstInput = chatbotSays + ", what do you want to talk about?";
+//			firstChatBot.processText(firstInput);
+//			if (chatbotSays == null)
+//			{
+//				chatbotSays = "There is null";
+//			}
+//
+//			if (chatbotSays.equals(""))
+//			{
+//				chatbotSays = "This is just blank bro";
+//			}
+//
+//			if (firstInput.contains("talk anymore"))
+//			{
+//				exitLoop();
+//			}
+//
+//		}
 
 
 		return chatbotSays;
