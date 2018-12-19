@@ -59,7 +59,6 @@ public class ChatPanel extends JPanel
 		this.add(loadingButton);
 		this.add(checkerButton);
 		this.add(chatField);
-		
 	}
 	
 	
