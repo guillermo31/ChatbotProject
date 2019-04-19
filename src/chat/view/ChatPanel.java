@@ -23,6 +23,12 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane;
 	private JButton resetButton;
 	private JPanel buttonPanel;
+	private ImageIcon saveIcon;
+	private ImageIcon loadIcon;
+	private ImageIcon chatIcon;
+	private ImageIcon tweetIcon;
+	private ImageIcon checkerIcon;
+	private ImageIcon searchIcon;
 	
 	public ChatPanel(ChatController appController)
 	{
@@ -31,6 +37,13 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		appLayout = new SpringLayout();
 		
+		saveIcon = new ImageIcon(getClass().getResource("/chat/view/images/save.png"));
+		loadIcon = new ImageIcon(getClass().getResource("/chat/view/images/load.png"));
+		chatIcon = new ImageIcon(getClass().getResource("/chat/view/images/chat.png"));
+		tweetIcon = new ImageIcon(getClass().getResource("/chat/view/images/tweet.png"));
+		checkerIcon = new ImageIcon(getClass().getResource("/chat/view/images/search.png"));
+		searchIcon = new ImageIcon(getClass().getResource("/chat/view/images/searchTwitter.png"));
+
 		
 		
 		this.appController = appController;
