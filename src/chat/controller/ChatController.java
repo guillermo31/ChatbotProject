@@ -83,8 +83,8 @@ public class ChatController
 //		}
 		chatbotSays = "Hi! First things first, what is your name?";
 		firstChatBot.setCurrentUser(chatbotSays);
+//		chatbotSays =  firstChatBot.getCurrentUser() + ", what do you want to talk about";
 		firstChatBot.processText(chatbotSays);
-		chatbotSays = chatbotSays + ", what do you want to talk about";
 //		String firstInput = chatbotSays + ", what do you want to talk about?";
 //		firstChatBot.processText(firstInput);
 //		
