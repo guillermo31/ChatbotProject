@@ -49,12 +49,12 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		appLayout_1 = new SpringLayout();
 //		
-		savingButton = new JButton("Save");
-		loadingButton = new JButton("Load");
-		chatButton = new JButton("Chat");
-		checkerButton = new JButton("Check Text");
-		tweetButton = new JButton("Send tweet");
-		searchTwitterButton = new JButton("Search Twitter");
+		savingButton = new JButton("Save", saveIcon);
+		loadingButton = new JButton("Load", loadIcon);
+		chatButton = new JButton("Chat", chatIcon);
+		checkerButton = new JButton("Check Text", checkerIcon);
+		tweetButton = new JButton("Send tweet", tweetIcon);
+		searchTwitterButton = new JButton("Search Twitter", searchIcon);
 		
 		buttonPanel = new JPanel(new GridLayout(1,0));
 		
